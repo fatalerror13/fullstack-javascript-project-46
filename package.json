@@ -14,13 +14,14 @@
     "pub": "npm run build && npm link && npm publish --dry-run"
   },
   "bin": {
-    "genDiff": "bin/src/genDiff.js"
+    "gendiff": "bin/src/genDiff.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "class-transformer": "^0.5.1",
     "class-validator": "^0.14.0",
+    "commander": "^11.1.0",
     "dotenv": "^16.3.1",
     "inversify": "^6.0.2",
     "reflect-metadata": "^0.2.0",
