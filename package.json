@@ -11,7 +11,7 @@
     "lint": "eslint ./src/**",
     "lint:fix": "eslint ./src/** --fix",
     "prettify": "prettier --check ./src",
-    "pub": "npm run build && npm link && npm publish --dry-run"
+    "pub": "npm run test && npm run lint && npm run build && npm link && npm publish --dry-run"
   },
   "bin": {
     "gendiff": "bin/src/genDiff.js"
