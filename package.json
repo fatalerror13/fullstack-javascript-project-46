@@ -11,7 +11,8 @@
     "lint": "eslint ./src/**",
     "lint:fix": "eslint ./src/** --fix",
     "prettify": "prettier --check ./src",
-    "pub": "npm run test && npm run lint && npm run build && npm link && npm publish --dry-run"
+    "pub": "npm run build && npm link && npm publish --dry-run",
+    "pub:all": "npm run test && npm run lint && npm run build && npm link && npm publish --dry-run"
   },
   "bin": {
     "gendiff": "bin/src/genDiff.js"
@@ -24,11 +25,13 @@
     "commander": "^11.1.0",
     "dotenv": "^16.3.1",
     "inversify": "^6.0.2",
+    "lodash": "^4.17.21",
     "reflect-metadata": "^0.2.0",
     "tslog": "^4.9.2"
   },
   "devDependencies": {
     "@types/jest": "^29.5.11",
+    "@types/lodash": "^4.14.202",
     "@types/node": "^20.10.4",
     "@typescript-eslint/eslint-plugin": "^6.14.0",
     "@typescript-eslint/parser": "^6.14.0",
