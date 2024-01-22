@@ -1,7 +1,8 @@
 #!/usr/bin/env node
 
 import { Command } from 'commander';
-import { compareTwoFiles, parseJsonByPath } from './helpers/helpers';
+import { compareTwoFiles } from './helpers/comparators';
+import { parsers } from './helpers/parsers';
 
 const program = new Command();
 

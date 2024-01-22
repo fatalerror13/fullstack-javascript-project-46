@@ -1,25 +1,6 @@
-import { existsSync, readFileSync } from 'node:fs';
 import { TFIleType, TParsedFile } from '../types';
 import _ from 'lodash';
-
-export const parseJsonByPath = (path: string): TParsedFile => {
-	if (existsSync(path)) {
-		const fileString = readFileSync(path, { encoding: 'utf8' });
-		return JSON.parse(fileString) as TParsedFile;
-	} else {
-		throw new Error(`File with path ${path} not exist`);
-	}
-};
-
-// fixme
-export const parseYamlByPath = (path: string): TParsedFile => {
-	if (existsSync(path)) {
-		const fileString = readFileSync(path, { encoding: 'utf8' });
-		return JSON.parse(fileString) as TParsedFile;
-	} else {
-		throw new Error(`File with path ${path} not exist`);
-	}
-};
+import { parseFile } from './parsers';
 
 export const compareObjects = (firstFile: TParsedFile, secondFile: TParsedFile): string => {
 	const firstFileKeys = Object.keys(firstFile);
@@ -51,17 +32,6 @@ export const compareObjects = (firstFile: TParsedFile, secondFile: TParsedFile):
 	result.push('}');
 
 	return result.join('\n');
-};
-
-export const parseFile = (path: string, fileType: TFIleType): TParsedFile => {
-	switch (fileType) {
-		case 'json':
-			return parseJsonByPath(path);
-		case 'yaml':
-			return parseYamlByPath(path);
-		default:
-			throw new Error(`File format ${fileType} is not supported`);
-	}
 };
 
 export const compareTwoFiles = (
